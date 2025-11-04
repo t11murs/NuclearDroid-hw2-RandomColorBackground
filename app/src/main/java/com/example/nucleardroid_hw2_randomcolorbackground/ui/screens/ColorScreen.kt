@@ -10,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
 import kotlin.random.Random
@@ -17,7 +18,8 @@ import kotlin.random.Random
 @Composable
 fun ColorScreen() {
     var bg by remember { mutableStateOf(Color.White) }
-    var hex = remember(bg) { bg.toHex() }
+    val hex = remember(bg) { bg.toHex() }
+    val content = if (bg.isDark()) Color.White else Color.Black
 
     Column(
         modifier = Modifier
@@ -31,8 +33,9 @@ fun ColorScreen() {
             value = hex,
             onValueChange = {},
             readOnly = true,
-            label = { Text("HEX") },
-            modifier = Modifier.fillMaxWidth()
+            label = { Text("HEX", color = content) },
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = LocalTextStyle.current.copy(color = content)
         )
 
         Spacer(Modifier.height(16.dp))
@@ -56,16 +59,10 @@ fun ColorScreen() {
 }
 
 private fun randomColor(random: Random = Random.Default): Color {
-
     val r = random.nextInt(256)
     val g = random.nextInt(256)
     val b = random.nextInt(256)
-
-    return Color(
-        r / 255f,
-        g / 255f,
-        b / 255f
-    )
+    return Color(r / 255f, g / 255f, b / 255f)
 }
 
 private fun Color.toHex(): String {
@@ -77,3 +74,5 @@ private fun Color.toHex(): String {
             .padStart(2, '0')
     return ("#${ch(this.red)}${ch(this.green)}${ch(this.blue)}")
 }
+
+private fun Color.isDark(): Boolean = this.luminance() < 0.5f
