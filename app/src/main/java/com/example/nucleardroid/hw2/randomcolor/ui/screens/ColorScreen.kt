@@ -1,4 +1,4 @@
-package com.example.nucleardroid_hw2_randomcolorbackground.ui.screens
+package com.example.nucleardroid.hw2.randomcolor.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
