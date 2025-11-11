@@ -1,4 +1,4 @@
-package com.example.nucleardroid_hw2_randomcolorbackground
+package com.example.nucleardroid
 
 import org.junit.Test
 

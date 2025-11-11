@@ -1,1 +1,17 @@
-/build
+# Gradle
+.gradle/
+**/build/
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+
+.idea/
+*.iml
+out/
+
+# Kotlin
+.kotlinc/
+
+# Logs & OS junk
+*.log
+.DS_Store
+Thumbs.db

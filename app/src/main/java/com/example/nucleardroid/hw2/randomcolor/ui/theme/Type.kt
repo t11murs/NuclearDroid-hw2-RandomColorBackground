@@ -1,4 +1,4 @@
-package com.example.nucleardroid_hw2_randomcolorbackground.ui.theme
+package com.example.nucleardroid.hw2.randomcolor.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

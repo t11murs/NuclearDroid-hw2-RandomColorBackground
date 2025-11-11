@@ -5,11 +5,10 @@ plugins {
 }
 
 android {
-    namespace = "com.example.nucleardroid_hw2_randomcolorbackground"
     compileSdk = 36
-
+    namespace = "nucleardroid.hw2.randomcolor"   // имя пакета в коде/R
     defaultConfig {
-        applicationId = "com.example.nucleardroid_hw2_randomcolorbackground"
+        applicationId = "nucleardroid.hw2.randomcolor"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -40,7 +39,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

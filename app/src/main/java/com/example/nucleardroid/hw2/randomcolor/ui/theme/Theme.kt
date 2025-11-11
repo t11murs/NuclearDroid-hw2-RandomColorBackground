@@ -1,6 +1,5 @@
-package com.example.nucleardroid_hw2_randomcolorbackground.ui.theme
+package com.example.nucleardroid.hw2.randomcolor.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
